@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>НЕПТУН — рыбное хозяйство</title>
+<style>
+:root{--navy:#07386b;--blue:#0879b9;--ice:#eef7ff;--gold:#ffc629;--ink:#102b49;--muted:#60758c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f7fbff}
+a{color:inherit;text-decoration:none}.top{background:linear-gradient(110deg,#fff,#e4f4ff);padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}.mark{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:white;font-size:30px}.brand strong{display:block;font-size:30px;letter-spacing:1px;color:var(--navy)}.brand small{font-size:14px;color:#315778}
+.slogan{font-family:Georgia,serif;font-style:italic;font-weight:bold;color:#1265a2;font-size:23px;text-align:center}.topright{display:flex;align-items:center;gap:15px;flex-wrap:wrap}.phone{font-weight:bold;color:var(--navy);line-height:1.5}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:30px;padding:13px 22px;background:var(--gold);color:#07386b;font-weight:bold;cursor:pointer;font-size:15px;box-shadow:0 5px 14px #003c7020}.btn:hover{filter:brightness(.97);transform:translateY(-1px)}.btn.blue{background:var(--navy);color:#fff}.btn.outline{background:white;border:1px solid #c6dced;box-shadow:none}
+nav{background:var(--navy);color:#fff;padding:13px 5%;display:flex;align-items:center;gap:28px;flex-wrap:wrap}nav a{font-weight:bold;font-size:14px}nav a:hover{color:var(--gold)}
+.hero{min-height:360px;padding:55px 5%;display:flex;align-items:center;background:linear-gradient(90deg,#032c55 0%,#064d7cbb 45%,#06365b22 100%),url('https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=1800&q=85') center/cover;color:white}
+.hero-copy{max-width:560px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold;color:#bfe8ff}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.06;margin:12px 0}.hero p{font-size:18px;line-height:1.55;max-width:490px;color:#eff8ff}.hero .btn{margin-top:12px}
+.wrap{max-width:1200px;margin:auto;padding:38px 22px}.section-head{text-align:center;margin:0 auto 25px}.section-head h2{font-size:30px;color:var(--navy);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.category{position:relative;overflow:hidden;border-radius:16px;min-height:170px;background:#dceeff;box-shadow:0 5px 20px #123b5a12}.category img{width:100%;height:170px;object-fit:cover;display:block;transition:transform .3s}.category:hover img{transform:scale(1.04)}.category span{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 13px;background:linear-gradient(transparent,#001f3ddd);color:#fff;font-weight:bold;font-size:18px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:#e7f3ff;border-radius:16px;padding:20px;margin-top:25px}.benefit{text-align:center;font-weight:bold;color:var(--navy);padding:8px}.benefit b{display:block;font-size:25px;margin-bottom:6px}
+.filters{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:20px 0 25px}.filter{border:1px solid #c7d9e9;border-radius:25px;background:#fff;padding:10px 16px;color:var(--navy);font-weight:bold;cursor:pointer}.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.product{background:#fff;border:1px solid #e1ebf4;border-radius:15px;overflow:hidden;box-shadow:0 6px 20px #173c5b0c;display:flex;flex-direction:column}.product img{width:100%;height:170px;object-fit:cover}.product-body{padding:15px;display:flex;flex-direction:column;flex:1}.product h3{margin:0 0 7px;font-size:18px}.product p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.4;flex:1}.price{font-size:21px;font-weight:bold;color:var(--navy);margin-bottom:12px}.price small{font-size:13px;font-weight:normal;color:var(--muted)}
+.delivery{border-radius:18px;padding:30px;background:linear-gradient(120deg,#06386c,#087bb7);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.delivery h2{margin:0 0 8px;font-size:27px}.delivery p{margin:0;color:#e4f4ff;line-height:1.5}
+.order{background:#fff;border-radius:18px;padding:25px;box-shadow:0 7px 24px #123b5a12;max-width:760px;margin:auto}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:bold;color:#35516c}.field input,.field textarea,.field select{width:100%;border:1px solid #cbd9e7;border-radius:10px;padding:12px;font:inherit;background:#fbfdff}.field textarea{min-height:85px;resize:vertical}.demo-note{font-size:12px;color:#71849a;line-height:1.5;margin-top:12px}.status{display:none;padding:13px;border-radius:10px;background:#e8f7ed;color:#176338;margin-top:14px}
+footer{background:#052d55;color:#fff;padding:28px 5%;text-align:center;margin-top:35px}footer p{color:#c9e3f7;margin:7px}
+.modal{display:none;position:fixed;inset:0;background:#00182dcc;z-index:10;padding:18px;overflow:auto;align-items:center;justify-content:center}.modal.open{display:flex}.modal-card{background:white;border-radius:18px;padding:22px;max-width:650px;width:100%;position:relative}.close{position:absolute;right:15px;top:12px;border:0;background:#edf4fa;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}.modal-card h2{color:var(--navy);margin:0 40px 15px 0}
+@media(max-width:850px){.categories,.products{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(2,1fr)}.slogan{display:none}}
+@media(max-width:520px){.top{padding:12px 4%}.brand strong{font-size:24px}.mark{width:48px;height:48px}.topright{width:100%;justify-content:space-between}.phone{font-size:13px}nav{gap:16px;padding:12px 4%}.hero{min-height:350px;padding:40px 6%}.hero p{font-size:16px}.wrap{padding:30px 15px}.categories,.products{grid-template-columns:1fr 1fr;gap:10px}.category,.category img{min-height:140px;height:140px}.category span{font-size:14px}.product img{height:125px}.product-body{padding:11px}.product h3{font-size:15px}.price{font-size:17px}.product .btn{padding:10px 9px;font-size:13px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head h2{font-size:25px}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand"><div class="mark">♆</div><div><strong>НЕПТУН</strong><small>Рыбное хозяйство</small></div></div>
+ <div class="slogan">Свежесть моря<br>в вашем доме!</div>
+ <div class="topright"><div class="phone">☎ +7 (___) ___-__-__<br><span style="font-weight:normal">Доставка по Луганску</span></div><button class="btn blue" onclick="openOrder()">Заказать</button></div>
+</header>
+<nav><a href="#home">Главная</a><a href="#catalog">Каталог</a><a href="#about">О нас</a><a href="#delivery">Доставка</a><a href="#contacts">Контакты</a></nav>
+<section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">Рыба и морепродукты</div><h1>Вкус моря —<br>на вашем столе</h1><p>Свежая, охлаждённая и замороженная рыба, а также вкусные рыбные полуфабрикаты. Выбирайте продукты и оставляйте заявку на доставку по Луганску.</p><a class="btn" href="#catalog">Перейти в каталог →</a></div></section>
+<main>
+<section class="wrap" id="catalog">
+ <div class="section-head"><h2>Выберите категорию</h2><p>Ассортимент для повседневного стола и особых случаев</p></div>
+ <div class="categories">
+  <a class="category" href="#products" onclick="setFilter('fresh')"><img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=700&q=80"><span>Свежая рыба</span></a>
+  <a class="category" href="#products" onclick="setFilter('chilled')"><img src="https://images.unsplash.com/photo-1466500419207-3e7d6b1e4a5b?auto=format&fit=crop&w=700&q=80"><span>Охлаждённая рыба</span></a>
+  <a class="category" href="#products" onclick="setFilter('frozen')"><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=700&q=80"><span>Замороженная рыба</span></a>
+  <a class="category" href="#products" onclick="setFilter('semi')"><img src="https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=700&q=80"><span>Полуфабрикаты</span></a>
+ </div>
+ <div class="benefits" id="about"><div class="benefit"><b>✓</b>Внимание к качеству</div><div class="benefit"><b>❄</b>Соблюдение условий хранения</div><div class="benefit"><b>➜</b>Доставка по Луганску</div><div class="benefit"><b>♡</b>Забота о покупателях</div></div>
+</section>
+<section class="wrap" id="products">
+ <div class="section-head"><h2>Каталог продукции</h2><p>Демонстрационные товары и цены — для примера оформления</p></div>
+ <div class="filters"><button class="filter active" onclick="setFilter('all')">Все товары</button><button class="filter" onclick="setFilter('fresh')">Свежая</button><button class="filter" onclick="setFilter('chilled')">Охлаждённая</button><button class="filter" onclick="setFilter('frozen')">Замороженная</button><button class="filter" onclick="setFilter('semi')">Полуфабрикаты</button></div>
+ <div class="products" id="productGrid">
+  <article class="product" data-cat="chilled"><img src="https://images.unsplash.com/photo-1485921325833-c519f76c4927?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Стейк лосося</h3><p>Порционные кусочки, охлаждённые</p><div class="price">1 250 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Стейк лосося')">Заказать</button></div></article>
+  <article class="product" data-cat="fresh"><img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Рыба свежая</h3><p>Ассортимент дня, уточняйте наличие</p><div class="price">590 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Рыба свежая')">Заказать</button></div></article>
+  <article class="product" data-cat="frozen"><img src="https://images.unsplash.com/photo-1580476262798-bhhh7f4a3?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Филе белой рыбы</h3><p>Замороженное филе без лишних добавок</p><div class="price">490 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Филе белой рыбы')">Заказать</button></div></article>
+  <article class="product" data-cat="frozen"><img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Креветки</h3><p>Замороженные, для любимых блюд</p><div class="price">890 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Креветки')">Заказать</button></div></article>
+  <article class="product" data-cat="semi"><img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Рыбные котлеты</h3><p>Полуфабрикат, удобно приготовить дома</p><div class="price">420 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Рыбные котлеты')">Заказать</button></div></article>
+  <article class="product" data-cat="semi"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Рыбные палочки</h3><p>Порционный полуфабрикат</p><div class="price">380 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Рыбные палочки')">Заказать</button></div></article>
+  <article class="product" data-cat="chilled"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Филе форели</h3><p>Охлаждённое филе</p><div class="price">1 090 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Филе форели')">Заказать</button></div></article>
+  <article class="product" data-cat="fresh"><img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?auto=format&fit=crop&w=700&q=80"><div class="product-body"><h3>Рыба сезонная</h3><p>Позиция для демонстрации ассортимента</p><div class="price">650 ₽ <small>/ кг</small></div><button class="btn blue" onclick="orderProduct('Рыба сезонная')">Заказать</button></div></article>
+ </div>
+ <p class="demo-note">* Все товары, цены и изображения в этом макете приведены исключительно для демонстрации. Реальный ассортимент, стоимость и наличие необходимо подтвердить перед публикацией.</p>
+</section>
+<section class="wrap" id="delivery"><div class="delivery"><div><h2>Доставка по Луганску</h2><p>Оставьте заявку — согласуем наличие, стоимость и удобное время доставки.<br>В этой демоверсии заявки никуда не отправляются.</p></div><button class="btn" onclick="openOrder()">Оставить заявку →</button></div></section>
+<section class="wrap" id="contacts"><div class="section-head"><h2>Связаться с нами</h2><p>Ссылки на мессенджеры добавим перед публикацией</p></div><div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap"><a class="btn blue" href="#contacts" onclick="placeholder(event,'Telegram')">✈ Telegram</a><a class="btn blue" href="#contacts" onclick="placeholder(event,'MAX')">● MAX</a><button class="btn" onclick="openOrder()">Заказать</button></div><p class="demo-note" style="text-align:center">Демонстрационные кнопки мессенджеров пока не ведут на реальные аккаунты.</p></section>
+</main>
+<footer><strong>НЕПТУН — рыбное хозяйство</strong><p>Рыба и морепродукты • Продажа и доставка по Луганску</p><p>Демонстрационный сайт. Контакты, цены и условия доставки будут уточнены.</p></footer>
+<div class="modal" id="orderModal" role="dialog" aria-modal="true"><div class="modal-card"><button class="close" onclick="closeOrder()" aria-label="Закрыть">×</button><h2>Заявка на заказ</h2><p style="color:#60758c;font-size:14px">Заполните форму — в демоверсии она покажет пример подтверждения, но не отправит заказ.</p>
+<form id="orderForm"><div class="formgrid">
+<div class="field"><label for="name">Ваше имя *</label><input id="name" required placeholder="Как к вам обращаться"></div>
+<div class="field"><label for="phoneInput">Телефон *</label><input id="phoneInput" required type="tel" placeholder="+7 ___ ___-__-__"></div>
+<div class="field full"><label for="item">Что хотите заказать? *</label><input id="item" required placeholder="Например, стейк лосося"></div>
+<div class="field"><label for="qty">Количество</label><input id="qty" placeholder="Например, 2 кг"></div>
+<div class="field"><label for="address">Адрес доставки</label><input id="address" placeholder="Луганск, улица, дом"></div>
+<div class="field full"><label for="comment">Комментарий</label><textarea id="comment" placeholder="Удобное время доставки или пожелания"></textarea></div>
+<div class="field full"><button class="btn blue" type="submit">Показать подтверждение заявки</button></div></div></form>
+<div class="status" id="formStatus"></div><p class="demo-note">Демо-режим: данные формы не сохраняются и не отправляются. Не вводите реальные персональные данные.</p>
+</div></div>
+<script>
+function openOrder(){document.getElementById('orderModal').classList.add('open');document.getElementById('formStatus').style.display='none'}
+function closeOrder(){document.getElementById('orderModal').classList.remove('open')}
+function orderProduct(name){document.getElementById('item').value=name;openOrder()}
+function setFilter(cat){document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase().includes(({all:'все',fresh:'свежая',chilled:'охлаждённая',frozen:'замороженная',semi:'полуфабрикаты'})[cat])));document.querySelectorAll('.product').forEach(p=>p.style.display=(cat==='all'||p.dataset.cat===cat)?'flex':'none')}
+function placeholder(e,name){e.preventDefault();alert(name+': ссылка на официальный аккаунт будет добавлена перед публикацией демо-сайта.')}
+document.getElementById('orderForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value;const item=document.getElementById('item').value;const status=document.getElementById('formStatus');status.textContent='Демонстрация: заявка для «'+item+'» заполнена. Спасибо, '+name+'! Заказ не отправлен — сайт работает в тестовом режиме.';status.style.display='block'});
+document.getElementById('orderModal').addEventListener('click',e=>{if(e.target.id==='orderModal')closeOrder()});
+</script>
+</body></html>
